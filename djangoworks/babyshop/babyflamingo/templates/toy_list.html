@@ -1,0 +1,42 @@
+
+{%extends "base.html"%}
+{%block body_block%}
+
+
+
+<div class="container">
+
+    <table class="table table-striped">
+
+        <tr>
+            <td>Name</td>
+            <td>Mode</td>
+           
+            <td>Image</td>
+            <td>Action</td>
+        </tr>
+
+        {%for to in toys%}
+        <tr>
+            <td>{{to.name}}</td>
+            <td>{{to.mode}}</td>
+            
+            <td>
+                <img src="{{to.image.url}}" alt="" width="100px" height="200px" style="object-fit: contain;">
+            </td>
+
+            <td>
+                <a href="{%url 'toy-remove' to.id%}">delete</a>
+                <a href="{%url 'add-tvarient' to.id%}">add toyvarient</a>
+                <a href="{%url 'toy-detail' to.id%}">view</a>
+            </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+
+
+
+
+</div>
+{%endblock%}

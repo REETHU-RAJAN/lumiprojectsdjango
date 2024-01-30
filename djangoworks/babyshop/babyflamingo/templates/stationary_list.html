@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+{%block body_block%}
+
+
+
+<div class="container">
+
+    <table class="table table-striped">
+
+        <tr>
+            <td>Name</td>
+            <td>Mode</td>
+           
+            <td>Image</td>
+            <td>Action</td>
+        </tr>
+
+        {%for st in stationary%}
+        <tr>
+            <td>{{st.name}}</td>
+            <td>{{st.mode}}</td>
+            
+            <td>
+                <img src="{{st.image.url}}" alt="" width="100px" height="200px" style="object-fit: contain;">
+            </td>
+
+            <td>
+                <a href="{%url 'stationary-remove' st.id%}">delete</a>
+                <a href="{%url 'add-svarient' st.id%}">add stationaryvarient</a>
+                <a href="{%url 'stationary-detail' st.id%}">view</a>
+            </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+
+
+
+
+</div>
+{%endblock%}

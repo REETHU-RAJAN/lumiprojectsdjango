@@ -1,0 +1,43 @@
+{%extends "base.html"%}
+{%block body_block%}
+
+
+
+
+<div class="container">
+
+    <table class="table table-striped">
+
+        <tr>
+            <td>Name</td>
+            <td>Mode</td>
+           
+            <td>Image</td>
+            <td>Action</td>
+        </tr>
+
+        {%for d in dress%}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.mode}}</td>
+            
+            <td>
+                <img src="{{d.image.url}}" alt="" width="100px" height="200px" style="object-fit: contain;">
+            </td>
+
+            <td>
+                <a href="{%url 'dress-remove' d.id%}">delete</a>
+                <a href="{%url 'add-dvarient' d.id%}">add dressvarient</a>
+                <a href="{%url 'dress-detail' d.id%}">view</a>
+            </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+
+
+
+
+</div>
+
+{%endblock%}

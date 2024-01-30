@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rowdies:wght@300&display=swap');
+:root{
+
+
+    --red:#EF233C;
+    --white:white;
+
+
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color:#000814;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rowdies', cursive;
+}
+.btn-cstm{
+    background-color: var(--red);
+}
+
+.text-danger{
+    color:var(--red);
+}
+.nav-item a{
+    color: var(--white);
+}
+
+.nav-item a:hover{
+    color: var(--red);
+}
+
+.h-5{
+    min-height: 450px;
+}
+.profile{
+    width: 50%;
+    margin: 20px;
+    filter:drop-shadow(10px 10px 70px var(--white))
+}
+.aboutme{
+    min-height:600px ;
+}
+
+.card img{
+    height: 300px;
+}
+
+.title{
+    color: var(--red);
+    text-align: center;
+}
+
+.icons i{
+
+margin-left: 10px;
+color:var(--red)
+
+}

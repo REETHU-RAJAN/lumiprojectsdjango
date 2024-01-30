@@ -1,0 +1,107 @@
+{%extends "base.html"%}
+{%block body_block%}
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-4">
+      <div class="card" style="width:100%">
+        <img src="{{stationary.image.url}}" class="card-img-top" alt="..." height="200px">
+        <div class="card-body">
+          <h5 class="card-title">{{stationary.name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{stationary.mode}}</li>
+          <li class="list-group-item">{{stationary.category}}</li>
+          
+        </ul>
+      
+      </div>
+    </div>
+    <div class="col-8 border boredr-dark">
+      <table class="table table-striped">
+        <tr>
+
+          <td>Price</td>
+          <td>Size</td>
+          
+          <td>Offers</td>
+          <td>Action</td>
+        </tr>
+        {%for v in stationary.stationaryvarients_set.all%}
+
+        <tr>
+          <td>{{v.price}}</td>
+          <td>{{v.size}}</td>
+          
+          <td>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne{{forloop.counter}}" aria-expanded="true" aria-controls="collapseOne">
+                    offers
+                  </button>
+                </h2>
+                <div id="collapseOne{{forloop.counter}}" class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+
+
+                    {%for o in v.offersstationary_set.all%}
+
+                    <div class="border border-top-0 border-start-0 border-end-0 border-bottom-1">
+                      price:{{o.price}} start_date:{{o.start_date|date:"SHORT_DATE_FORMAT"}} |due_date :{{o.due_date|date:"SHORT_DATE_FORMAT"}}
+
+
+                    </div>
+                    {%endfor%}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    </td>
+
+    <td>
+      <a href="{%url 'update-svarient' v.id %}" class="btn btn-outline-info">Edit</a>
+      <a href="{%url 'remove-svarient' v.id%}" class="btn btn-outline-danger">remove</a>
+
+      <a href="{%url 'offerss-add' v.id%}" class="btn btn-outline-success">add offer</a>
+    </td>
+    </tr>
+    {%endfor%}
+
+    </table>
+  </div>
+
+
+
+
+
+</div>
+
+<div class="row">
+  {%for v in stationary.stationaryvarients_set.all%}
+  {%for o in v.offersstationary_set.all%}
+  <div class="border p-3">
+
+    <div>
+      size {{o.stationaryvarient.size}} 
+    </div>
+
+    <div><span>offer price$ {{o.price}}</span></div>
+    <div>start_date : {{o.start_date}}</div>
+    <div>due_date :{{o.due_date}}</div>
+    <a href="{%url 'delete-offers' o.id%}">delete</a>
+  </div>
+  {%endfor%}
+
+  {%endfor%}
+
+</div>
+{%endblock%}

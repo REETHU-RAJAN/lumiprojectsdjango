@@ -1,0 +1,162 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=PT+Sans:ital,wght@1,400;1,700&display=swap');
+
+/* this import if for import font style */
+
+body{
+  background-color: black;
+  width:100vw;
+  height:100vh;
+  margin:0px;
+}
+.container{
+  width: 80%;
+  color: white;
+
+  background-color: black;
+  border: 1px solid black;
+  margin-left: auto; /*as like width of contain respectively*/
+   margin-right: auto; 
+}
+.head{
+     font-weight: bolder;
+     font-size: larger;
+     color: white;
+}
+.headbody{
+    width:auto;
+    font-family: 'PT Sans', sans-serif; /*outside google font*/
+  line-height:30px ;
+  color:white;
+
+
+
+}
+
+.card{
+
+  width:42%;
+
+  height: 600px;
+  border: 10px solid black;
+  background-color: white;
+  /* display: flex;  pic and content in same */
+  padding:10px;/* card total space around margin*/
+  /* gap:90px; in between pic and content gap */
+
+}
+.row{
+  width:100%;
+  background-color:black;
+  display: flex; /* 2 row in same line*/
+  /* height: 800px; */
+  justify-content: space-around; /* in between col space*/
+  margin-top: 30px;/*in between rows space*/
+  /* flex-wrap: wrap; */
+
+   
+}
+.card-image{
+width:200px;
+height:200px;
+/* background-color: red; */
+flex:2;/* image size liess combare to content*/
+/* margin:20px; */
+
+
+
+
+}
+.card-content{
+  /* margin-left: 20px; in between pic and content gap */
+  /* display: flex; */
+  margin-left: 70px;
+ 
+ 
+
+
+  flex:2;
+}
+.cardhead_dd{
+
+    background-color: grey;
+    font-weight: 100;
+    color: white;
+    height: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    /* justify-content: space-around; */
+   
+}
+.cardhead_ff{
+  
+    font-weight: 100;
+    color: white;
+    height: 50px;
+    padding-top: 20px;
+    /* padding-left: 20px;  */
+    display: flex;
+    justify-content: space-around;
+
+
+  background-color: red;
+}
+.card-header{
+  padding: 10px; /*ullil spacing*/
+
+
+  color:black;
+  /* border-bottom: 2px solid #969696; thazha only border */
+  /* font-weight:bolder;  */
+  font-size: larger;
+}
+
+.card-body{
+ 
+  line-height:30px ;
+  color:black ;
+  /* margin-left: 2px; */
+
+  /* this is from gradibent background cssgradient grabient copy it */
+
+
+  
+}
+.icon-danger{
+
+
+  color:red; 
+}
+li{
+  list-style:none;
+  
+
+}
+
+
+.card-footer{
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between; /*for bottons on 2 side*/
+}
+.btn{
+
+
+  padding: 12px; /* in between botton space*/
+  font-weight: 400;
+  border:1px solid white;
+
+  /* border-radius: 5px;button shape modify */
+
+}
+.btn-danger{
+
+  margin-left: 50PX;
+  background-color:red;
+  color:white
+}
+
